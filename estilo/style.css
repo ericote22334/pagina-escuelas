@@ -1,119 +1,155 @@
-/* estilo/style.css */
-
+/* Fuente */
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #FFF8DC; /* color crema suave */
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa;
     color: #333;
 }
 
-h1, h2 {
-    text-align: center;
-    color: #ff6f61;
-    font-size: 2.5em;
-    margin-top: 20px;
-}
-
+/* Barra de navegación */
 #barra {
-    background-color: #87CEEB; /* azul cielo */
-    padding: 10px 0;
-    text-align: center;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
 }
 
 #barra ul {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 0;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-#barra li {
-    background-color: #FFD700; /* amarillo alegre */
-    border-radius: 15px;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-#barra li:hover {
-    background-color: #FFA500; /* naranja */
-}
-
-#barra a {
+#barra li a {
     text-decoration: none;
-    font-weight: bold;
-    color: #000;
-    font-size: 1.2em;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
 }
 
-#imgtarjetas {
+#barra li a:hover {
+    color: #ffeb3b;
+}
+
+/* Título principal */
+h1 {
     text-align: center;
-    margin: 20px;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Imágenes y textos */
+#imgtarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
 }
 
 #imgtarjetas img {
-    width: 200px;
-    height: auto;
-    border-radius: 20px;
-    margin: 10px;
-    border: 4px solid #FFB6C1; /* rosa suave */
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 #imgtarjetas p {
-    max-width: 600px;
-    margin: 10px auto 30px;
-    font-size: 1.2em;
-    background-color: #E0FFFF; /* celeste suave */
-    padding: 10px;
-    border-radius: 10px;
+    max-width: 300px;
+    font-size: 1rem;
 }
 
+/* Botones */
 button {
-    background-color: #98FB98; /* verde pastel */
+    margin: 2rem 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
     border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 1.2em;
-    border-radius: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #90EE90;
-}
-
 button a {
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    color: white;
 }
 
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Sección Sobre Nosotros */
 #sobre-nosotros {
-    background-color: #F0E68C; /* amarillo claro */
-    padding: 30px 20px;
-    border-top: 4px dashed #FF69B4; /* rosa fuerte */
+    padding: 2rem;
+    background-color: #ffffff;
+    margin-top: 2rem;
+}
+
+#sobre-nosotros h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
 }
 
 #sobre-nosotros div {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 #sobre-nosotros img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid #FFA07A; /* salmón */
-    background-color: white;
+    background-color: #ddd;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
-#sobre-nosotros p {
-    max-width: 600px;
-    margin: 10px auto;
-    font-size: 1.1em;
-    background-color: #FFF0F5; /* lavanda */
-    padding: 15px;
-    border-radius: 12px;
+/* Secciones Escuelas y Hospitales */
+[id^="img-texto-"],
+[id^="hospital-"],
+#consumed {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    margin: 1rem auto;
+    max-width: 1000px;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+[id^="img-"], [id^="texto-"] {
+    flex: 1;
+    min-width: 300px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #barra {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imgtarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    [id^="img-texto-"],
+    [id^="hospital-"],
+    #consumed {
+        flex-direction: column;
+    }
 }
